@@ -1,0 +1,22 @@
+package com.company;
+
+public class MainA extends Thread{
+    public static int amount = 0;
+
+    public static void main (String [] args){
+    MainA thread = new MainA();
+    thread.start();
+    //wait for the thread to finish
+        while(thread.isAlive()){
+            System.out.println("Waiting...");
+        }
+        //update amount and print its value
+    System.out.println(amount);
+    amount++;
+    System.out.println(amount);
+    }
+
+    public void run(){
+        amount++;
+    }
+}
